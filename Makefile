@@ -1,7 +1,11 @@
-.PHONY: run
-generate:
-	@go run main.go
+.PHONY: backend
+backend:
+	@cd backend && go run main.go
+
+.PHONY: frontend-build
+frontend-build:
+	@cd frontend && npm run build
 
 .PHONY: generate
 generate:
-	@buf generate
+	@cd api && buf generate
